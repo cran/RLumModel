@@ -2,8 +2,8 @@ Package: RLumModel
 Type: Package
 Title: Modelling Ordinary Differential Equations Leading to
         Luminescence
-Version: 0.1.0
-Date: 2016-02-02
+Version: 0.1.1
+Date: 2016-05-02
 Author: Johannes Friedrich [aut, trl, cre],
     Sebastian Kreutzer [aut, ths],
     Christoph Schmidt [aut, ths]
@@ -29,6 +29,6 @@ Collate: RLumModel-package.R calc_signal.R calc_concentrations.R
 RoxygenNote: 5.0.1
 Suggests: testthat
 NeedsCompilation: no
-Packaged: 2016-02-03 08:24:57 UTC; Johannes
+Packaged: 2016-05-02 08:56:23 UTC; johannes
 Repository: CRAN
-Date/Publication: 2016-02-03 12:26:14
+Date/Publication: 2016-05-02 13:24:21
