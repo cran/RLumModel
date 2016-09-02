@@ -3,14 +3,14 @@
 \docType{package}
 \name{RLumModel-package}
 \alias{RLumModel-package}
-\title{Modelling Ordinary Differential Equations Leading to Luminescence}
+\title{Solving Ordinary Differential Equations to Understand Luminescence}
 \description{
 A collection of function to simulate luminescence signals in the mineral quartz based on
 published models.
 }
 \details{
 \tabular{ll}{ Package: \tab RLumModel\cr Type: \tab Package\cr Version:
-\tab 0.1.0\cr Date: \tab 2016-02-02 \cr License: \tab GPL-3\cr }
+\tab 0.1.2\cr Date: \tab 2016-09-02 \cr License: \tab GPL-3\cr }
 }
 \author{
 \bold{Authors}

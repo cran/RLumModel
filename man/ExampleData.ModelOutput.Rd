@@ -31,8 +31,10 @@ plot_RLum(TL_concentrations)
 
 }
 \references{
-Bailey, R.M., 2001. Towards a general kinetic model for optically and thermally stimulated
-luminescence of quartz. Radiation Measurements 33, 17-45.
+Friedrich, Johannes, Sebastian Kreutzer and Christoph Schmidt. 
+Solving ordinary differential equations to understand luminescence:
+RLumModel, an advanced research tool for simulating luminescence in quartz using R. 
+Quaternary Geochronology 2016.
 }
 \keyword{datasets}
 

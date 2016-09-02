@@ -226,9 +226,9 @@ for (i in 1:length(sequence)){
                                dose_rate = sequence[[i]]["dose_rate"],
                                n,
                                parms)
-
     ##pause to releax
     n <- .simulate_pause(temp = sequence[[i]]["temp"], duration = 5, n, parms)
+    
   }
 
   #check if current sequence step is RF
@@ -271,7 +271,7 @@ if(txtProgressBar & verbose){close(pb)}
 
 # delete null/empty entries in a list
 output.model <- output.model[unlist(lapply(output.model,length)!=0)]
-
+# print(n$n)
 #return of the function is a "RLum.Analysis" object with the output of the given sequence
 return(set_RLum(class = "RLum.Analysis", records = output.model, protocol = model))
 

@@ -1,9 +1,9 @@
 Package: RLumModel
 Type: Package
-Title: Modelling Ordinary Differential Equations Leading to
+Title: Solving Ordinary Differential Equations to Understand
         Luminescence
-Version: 0.1.1
-Date: 2016-05-02
+Version: 0.1.2
+Date: 2016-09-01
 Author: Johannes Friedrich [aut, trl, cre],
     Sebastian Kreutzer [aut, ths],
     Christoph Schmidt [aut, ths]
@@ -13,11 +13,11 @@ Authors@R: c(
     person("Christoph", "Schmidt", role = c("aut", "ths"))
     )
 Maintainer: Johannes Friedrich <johannes.friedrich@uni-bayreuth.de>
-Description: A collection of function to simulate luminescence signals in the
+Description: A collection of functions to simulate luminescence signals in the
     mineral quartz based on published models.
 Contact: Package Developer Team <developer@model.r-luminescence.de>
 License: GPL-3
-Depends: R (>= 3.2.3), utils, Luminescence (>= 0.5.1)
+Depends: R (>= 3.2.3), utils, Luminescence (>= 0.6.0)
 Imports: deSolve (>= 1.12), methods
 Collate: RLumModel-package.R calc_signal.R calc_concentrations.R
         create_DRT.sequence.R create_SAR.sequence.R
@@ -27,8 +27,9 @@ Collate: RLumModel-package.R calc_signal.R calc_concentrations.R
         simulate_illumination.R simulate_irradiation.R simulate_pause.R
         translate_sequence.R
 RoxygenNote: 5.0.1
-Suggests: testthat
+Suggests: R.rsp, testthat
+VignetteBuilder: R.rsp
 NeedsCompilation: no
-Packaged: 2016-05-02 08:56:23 UTC; johannes
+Packaged: 2016-09-02 08:56:17 UTC; johannes
 Repository: CRAN
-Date/Publication: 2016-05-02 13:24:21
+Date/Publication: 2016-09-02 14:59:26

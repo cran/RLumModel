@@ -25,7 +25,7 @@
 #'
 #' @note This function calculates the ODE for the energy-band-model.
 #'
-#' @section Function version: 0.1.0
+#' @section Function version: 0.1.1
 #'
 #' @author Johannes Friedrich, University of Bayreuth (Germany),
 #'
@@ -73,10 +73,6 @@
   W <- parameters.step$parms$W
   K <- parameters.step$parms$K
 
-  b <- parameters.step$b
-  R <- parameters.step$R
-  P <- parameters.step$P
-  temp <- parameters.step$temp
   ##============================================================================##
 
 
@@ -101,14 +97,7 @@
 
     dn[length(N)+1] = R-sum(dn[1:j])-sum(n[length(N)+1]*n[(j+1):jj]*B[(j+1):jj])
 
-    if (parms@originator == "Bailey 2001" || parms@originator == "Bailey2004" || parms@originator == "Bailey2002")
-    {
-      dn[length(N)+2] = R-sum(dn[(j+1):jj])           # valence band ODE for Bailey model 2001/2002/2004
-
-    } else { # valence band ODE for all other models
-
-      dn[length(N)+2] = R-sum(dn[(j+1):jj])-sum(n[length(N)+1]*n[(j+1):jj]*B[(j+1):jj])
-    }
+    dn[length(N)+2] = R-sum(dn[(j+1):jj])-sum(n[length(N)+1]*n[(j+1):jj]*B[(j+1):jj])
 
   return(list(dn)) # return the rate of change
 

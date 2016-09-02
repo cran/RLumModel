@@ -76,11 +76,6 @@
   W <- parameters.step$parms$W
   K <- parameters.step$parms$K
 
-  b <- parameters.step$b
-  a <- parameters.step$a
-  R <- parameters.step$R
-  P <- parameters.step$P
-  temp <- parameters.step$temp
   ##============================================================================##
 
 

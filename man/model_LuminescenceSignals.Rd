@@ -50,15 +50,15 @@ Defining a \bold{sequence}\cr
 
 \tabular{lll}{
 \bold{Arguments} \tab \bold{Description} \tab \bold{Sub-arguments}\cr
-TL \tab thermally stimulated luminescence \tab 'temp begin', 'temp end', 'heating rate'\cr
-OSL\tab optically stimulated luminescence \tab 'temp', 'duration','optical_power'\cr
-ILL\tab illumination \tab 'temp', 'duration','optical_power'\cr
-LM_OSL\tab linear modulated OSL \tab 'temp', 'duration', optional: 'start_power', 'end_power'\cr
-RL/RF\tab radioluminescence\tab 'temp','dose', 'dose_rate' \cr
-IRR\tab irradiation \tab 'temp','dose', 'dose_rate' \cr
-CH \tab cutheat \tab 'temp', optional: 'duration', 'heating_rate' \cr
-PH  \tab preheat \tab 'temp', 'duration' optional: 'heating_rate' \cr
-PAUSE \tab pause \tab 'temp', 'duration'
+TL \tab thermally stimulated luminescence \tab 'temp begin' [\eqn{^{\circ}}C], 'temp end' [\eqn{^{\circ}}C], 'heating rate' [\eqn{^{\circ}}C/s]\cr
+OSL\tab optically stimulated luminescence \tab 'temp' [\eqn{^{\circ}}C], 'duration' [s], 'optical_power' [\%]\cr
+ILL\tab illumination \tab 'temp' [\eqn{^{\circ}}C], 'duration' [s], 'optical_power' [\%]\cr
+LM_OSL\tab linear modulated OSL \tab 'temp' [\eqn{^{\circ}}C], 'duration' [s], optional: 'start_power' [\%], 'end_power' [\%]\cr
+RL/RF\tab radioluminescence\tab 'temp' [\eqn{^{\circ}}C], 'dose' [Gy], 'dose_rate' [Gy/s] \cr
+IRR\tab irradiation \tab 'temp' [\eqn{^{\circ}}C], 'dose' [Gy], 'dose_rate' [Gy/s] \cr
+CH \tab cutheat \tab 'temp' [\eqn{^{\circ}}C], optional: 'duration' [s], 'heating_rate' [\eqn{^{\circ}}C/s]\cr
+PH  \tab preheat \tab 'temp' [\eqn{^{\circ}}C], 'duration' [s], optional: 'heating_rate' [\eqn{^{\circ}}C/s]\cr
+PAUSE \tab pause \tab 'temp' [\eqn{^{\circ}}C], 'duration' [s]
 }
 
 Note: 100 \% illumination power equates 20 mW/cm^2
@@ -67,27 +67,27 @@ Defining a \bold{SAR-sequence}\cr
 
 \tabular{lll}{
 \bold{Abrivation} \tab \bold{Description} \tab \bold{examples} \cr
-RegDose \tab Dose points of the regenerative cycles\tab c(0, 80, 140, 260, 320, 0, 80)\cr
-TestDose\tab Test dose for the SAR cycles  \tab 50 \cr
-PH\tab Temperature of the preheat \tab 240 \cr
-CH\tab Temperature of the cutheat \tab 200 \cr
-OSL_temp\tab Temperature of OSL read out\tab  125 \cr
-OSL_duration\tab  Duration of OSL read out\tab default: 40 \cr
-Irr_temp \tab Temperature of irradiation \tab default: 20\cr
-PH_duration  \tab Duration of the preheat \tab default: 10 \cr
-dose_rate \tab Dose rate of the laboratory irradiation source \tab default: 1 \cr
-optical_power \tab Percentage of the full illumination power \tab default: 90 \cr
-Irr_2recover \tab Dose to be recovered in a dose-recovery-test \tab 20
+RegDose \tab Dose points of the regenerative cycles [Gy]\tab c(0, 80, 140, 260, 320, 0, 80)\cr
+TestDose\tab Test dose for the SAR cycles  [Gy]\tab 50 \cr
+PH\tab Temperature of the preheat [\eqn{^{\circ}}C]\tab 240 \cr
+CH\tab Temperature of the cutheat [\eqn{^{\circ}}C]\tab 200 \cr
+OSL_temp\tab Temperature of OSL read out [\eqn{^{\circ}}C]\tab  125 \cr
+OSL_duration\tab  Duration of OSL read out [s]\tab default: 40 \cr
+Irr_temp \tab Temperature of irradiation [\eqn{^{\circ}}C]\tab default: 20\cr
+PH_duration  \tab Duration of the preheat [s]\tab default: 10 \cr
+dose_rate \tab Dose rate of the laboratory irradiation source [Gy/s]\tab default: 1 \cr
+optical_power \tab Percentage of the full illumination power [\%]\tab default: 90 \cr
+Irr_2recover \tab Dose to be recovered in a dose-recovery-test [Gy]\tab 20
 }
 }
 \section{Function version}{
- 0.1.0
+ 0.1.1
 }
 \examples{
 
 
 ##================================================================##
-## Example 1: Simulate sample history of Bailey2001
+## Example 1: Simulate TL with Bailey2001
 ## (cf. Bailey, 2001, Fig. 1)
 ##================================================================##
 

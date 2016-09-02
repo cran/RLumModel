@@ -32,7 +32,7 @@
 #' When a user wants to create his/her own parameter sets he/she only has to take care that the luminescence center is the second to last
 #' entry in every vector.
 #'
-#' @section Function version: 0.1.0
+#' @section Function version: 0.1.1
 #'
 #' @author Johannes Friedrich, University of Bayreuth (Germany),
 #'
@@ -108,19 +108,19 @@
       B = c(0, 0, 0, 0, 0, 0, 0, 0, 5e-9, 5e-10, 1e-10, 1e-10),
       Th = c(1e-19, 0, 1e-16, 3e-17, 4e-18, 3e-19, 2e-21, 0),
       E_th = c(0.1, 0, 0.1, 0.13, 0.2, 0.2, 0.2,0),
-      n =  set_RLum(class = "RLum.Results", data = list(n = c(2.231286e+00, 1.009119e+07, 1.705852e+10, 4.363260e+09, 9.242267e+09, 6.457175e+09, 1.989090e+12, 4.981360e+12, 1.200000e+11, 1.000000e+12, 1.000000e+13, 5.000000e+11, 1.638903e-05, 4.888349e+13), temp = 20), originator = "sample history Bailey2002")
+      n =  set_RLum(class = "RLum.Results", data = list(n = c(3.274645e+03, 3.128271e+07, 6.723411e+10, 1.720849e+10, 3.798306e+10, 2.256442e+10, 1.990058e+12, 4.963314e+12, 3.277402e+09, 7.575729e+10, 6.929073e+12, 9.028577e+10, 2.205516e+04, 4.484990e+04), temp = 20), originator = "sample history Bailey2002")
     ),
 
     Bailey2004 = list(
 
-      N = c(1.42e10, 1.5e9, 2.05e11, 7.04e10, 1.7e11, 2.53e11, 3.58e12, 1.28e13, 4.16e12, 4.2e11, 8.83e13, 1.15e14),
+      N = c(1.42e10, 1.5e9, 2.05e11, 7.04e10, 1.77e11, 2.53e11, 3.58e12, 1.28e13, 4.16e12, 4.2e11, 8.83e13, 1.15e14),
       E = c(0.97, 1.55, 1.7, 1.72, 1.8, 1.65, 2.6, 2, 1.75, 1.43, 5, 5),
       s = c(5e12, 5e14, 5e12, 5e13, 5e13, 5e13, 5e13, 1e10, 5e14,  5e13, 1e13, 1e13),
       A = c(1e-8, 1e-8, 1e-9, 8e-10, 8e-10, 5e-10, 2e-10, 1e-10, 1e-9, 5e-8, 1e-9, 1e-10),
       B = c(0, 0, 0, 0, 0, 0, 0, 0, 5e-10, 5e-9, 1e-10, 1e-10),
       Th = c(1e-19, 0, 1e-16, 3e-17, 4e-18, 3e-19, 2e-21, 0),
       E_th = c(0.1, 0, 0.1, 0.13, 0.2, 0.2, 0.2, 0),
-      n =  set_RLum(class = "RLum.Results", data = list(n = c(9.941874e-01, 7.901951e+07, 1.044370e+08, 2.988593e+07, 2.531635e+09, 3.960548e+10, 1.412544e+12, 2.849834e+12, 7.322997e+10, 2.685892e+07, 3.907439e+12, 5.203548e+11, 6.867563e-07, 2.094339e-08), temp = 20), originator = "sample history Bailey2004")
+      n =  set_RLum(class = "RLum.Results", data = list(n = c(5.150601e+02, 1.164635e+09, 4.270964e+10, 1.201018e+10, 5.712265e+10, 2.065021e+11, 3.573812e+12, 1.280000e+13, 1.496238e+11, 1.214026e+10, 1.433739e+13, 2.194172e+12, 3.743729e-04, 8.625906e-06), temp = 20), originator = "sample history Bailey2004")
     ),
 
     Pagonis2007 = list(

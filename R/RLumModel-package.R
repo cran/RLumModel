@@ -1,10 +1,10 @@
-#' Modelling Ordinary Differential Equations Leading to Luminescence
+#' Solving Ordinary Differential Equations to Understand Luminescence
 #'
 #' A collection of function to simulate luminescence signals in the mineral quartz based on
 #' published models.
 #'
 #' \tabular{ll}{ Package: \tab RLumModel\cr Type: \tab Package\cr Version:
-#' \tab 0.1.1\cr Date: \tab 2016-05-02 \cr License: \tab GPL-3\cr }
+#' \tab 0.1.2\cr Date: \tab 2016-09-02 \cr License: \tab GPL-3\cr }
 #'
 #' @name RLumModel-package
 #' @docType package
@@ -56,9 +56,11 @@ NULL
 #'
 #' @references
 #'
-#' Bailey, R.M., 2001. Towards a general kinetic model for optically and thermally stimulated
-#' luminescence of quartz. Radiation Measurements 33, 17-45.
-#'
+#' Friedrich, Johannes, Sebastian Kreutzer and Christoph Schmidt. 
+#' Solving ordinary differential equations to understand luminescence:
+#' RLumModel, an advanced research tool for simulating luminescence in quartz using R. 
+#' Quaternary Geochronology 2016.
+#
 #' @source \bold{model_LuminescenceSignals()}
 #'
 #' @note This example has only one record (TL). The used sequence was

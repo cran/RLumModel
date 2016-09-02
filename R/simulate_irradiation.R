@@ -19,7 +19,7 @@
 #'
 #' @note This function can do just nothing at the moment.
 #'
-#' @section Function version: 0.1.0
+#' @section Function version: 0.1.1
 #'
 #' @author Johannes Friedrich, University of Bayreuth (Germany),
 #'
@@ -77,12 +77,13 @@
   ##============================================================================##
   if(parms$model == "Bailey2004"){
     R <- dose_rate*2.5e10
-  }
-  if(parms$model == "Bailey2002"){
-    R <- dose_rate*3e10
-  }
-  else{
-    R <- dose_rate*5e7  # all other simulations
+  } else {
+    
+    if(parms$model == "Bailey2002"){
+      R <- dose_rate*3e10
+    } else {
+      R <- dose_rate*5e7  # all other simulations
+    }
   }
 
   P <- 0
@@ -103,7 +104,7 @@
   ##============================================================================##
   # TAKING THE LAST LINE OF "OUT" TO COMMIT IT TO THE NEXT STEP
   ##============================================================================##
-# print(out[length(times),-1])
+  # print(out[length(times),-1])
   return(Luminescence::set_RLum(class = "RLum.Results",
                   data = list(
                     n = out[length(times),-1],
