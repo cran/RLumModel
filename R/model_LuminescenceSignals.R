@@ -49,7 +49,7 @@
 #' Riso sequence editor. To simulate SAR measurements there is an extra option to set the sequence list (cf. details).
 #
 #' @param model \code{\link{character}} (\bold{required}): set model to be used. Available models are:
-#' "Bailey2001", "Bailey2002", "Bailey2004", "Pagonis2007", "Pagonis2008", "Friedrich2017" and for own models "customized" (or "customised").
+#' "Bailey2001", "Bailey2002", "Bailey2004", "Pagonis2007", "Pagonis2008", "Friedrich2017", "Friedrich2018" and for own models "customized" (or "customised").
 #' Note: When model = "customized" is set, the argument 'own_parameters' has to be set.
 #'
 #' @param lab.dose_rate \code{\link{numeric}} (with default): laboratory dose rate in XXX
@@ -93,7 +93,7 @@
 #' 
 #' @param own_start_temperature \code{\link{numeric}} (with default): Parameter to control the start temperature (in deg. C) of
 #' a simulation. This parameter takes effect only when 'model = "customized"' is choosen. 
-#'
+#' 
 #' @param \dots further arguments and graphical parameters passed to
 #' \code{\link{plot.default}}. See details for further information.
 #'
@@ -101,7 +101,7 @@
 #' in the sequence. Every entry is an \code{\linkS4class{RLum.Data.Curve}} object and can be plotted, analysed etc. with
 #' further \code{RLum}-functions.
 #'
-#' @section Function version: 0.1.4 
+#' @section Function version: 0.1.5 
 #'
 #' @author Johannes Friedrich, University of Bayreuth (Germany),
 #' Sebastian Kreutzer, IRAMAT-CRP2A, Universite Bordeaux Montaigne (France)
@@ -448,6 +448,7 @@ model_LuminescenceSignals <- function(
                               "Pagonis2007", 
                               "Bailey2002", 
                               "Friedrich2017", 
+                              "Friedrich2018",
                               "customized",
                               "customised")
 
@@ -557,8 +558,10 @@ model_LuminescenceSignals <- function(
   extraArgs <- list(...)
 
 # Load model parameters ------------------------------------------------------------------------------------
+  
+  ## check if "parms" in extra arguments for fitting data to model parameters
 
-  if(model == "customized" || model == "customised"){
+    if(model == "customized" || model == "customised"){
         if(is.null(own_parameters)){
           stop("[model_LuminescenceSignals()] Argument 'model' set to 'customized', but no own parameters are given!", 
                call. = FALSE)}
@@ -602,21 +605,22 @@ model_LuminescenceSignals <- function(
                                                   model = model))
         }
         
-      } else { ## model not customized and parms not set
-        
-        if(!is.null(own_parameters)){
-          warning(paste0("[model_LuminescenceSignals()] Argument 'own_parameters' set, but argument 'model' not set to 'customized'. Used '", model, "' as argument for 'model'."), call. = FALSE)
-        }
-        
-        if(!is.null(own_state_parameters)){
-          warning(paste0("[model_LuminescenceSignals()] Argument 'own_sate_parameters' set, but argument 'model' not set to 'customized'. Ignored argument 'own_state_parameters'."), call. = FALSE)
-        }
-        
-        if(!is.null(own_start_temperature)){
-          warning(paste0("[model_LuminescenceSignals()] Argument 'own_start_temperature' set, but argument 'model' not set to 'customized'. Ignored argument 'own_start_temperature'."), call. = FALSE)
-        }
+    } else { ## model not customized and parms not set
       
+      if(!is.null(own_parameters)){
+        warning(paste0("[model_LuminescenceSignals()] Argument 'own_parameters' set, but argument 'model' not set to 'customized'. Used '", model, "' as argument for 'model'."), call. = FALSE)
+      }
+      
+      if(!is.null(own_state_parameters)){
+        warning(paste0("[model_LuminescenceSignals()] Argument 'own_sate_parameters' set, but argument 'model' not set to 'customized'. Ignored argument 'own_state_parameters'."), call. = FALSE)
+      }
+      
+      if(!is.null(own_start_temperature)){
+        warning(paste0("[model_LuminescenceSignals()] Argument 'own_start_temperature' set, but argument 'model' not set to 'customized'. Ignored argument 'own_start_temperature'."), call. = FALSE)
+      }
+        
         parms <- .set_pars(model)
+
         if(simulate_sample_history){
           n <- Luminescence::set_RLum(class = "RLum.Results",
                                       data = list(n = rep(0,length(parms$N)+2),
@@ -625,14 +629,12 @@ model_LuminescenceSignals <- function(
           } else {
             n <- parms$n
           }
-      }
-  
+    }
 
 # sequence ------------------------------------------------------------------------------------
 
   #sequence, n and parms as arguments for the SequenceTranslator, who translates the sequence to different model steps
-    model.output <-
-      .translate_sequence(
+    model.output <- .translate_sequence(
         sequence = sequence,
         n = n,
         model = model,
@@ -648,6 +650,7 @@ model_LuminescenceSignals <- function(
     plot.data <- get_RLum(model.output, 
                           recordType = c("RF$", "TL$", "OSL$", "LM-OSL$", "RF_heating$", "pause$"), 
                           drop = FALSE)
+    
     Luminescence::plot_RLum(plot.data, ...)
   }
 

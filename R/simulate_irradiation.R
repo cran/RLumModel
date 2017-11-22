@@ -17,7 +17,7 @@
 #'
 #' @return This function returns an RLum.Results object.
 #'
-#' @section Function version: 0.1.1 [2016-09-02]
+#' @section Function version: 0.1.2 [2017-11-20]
 #'
 #' @author Johannes Friedrich, University of Bayreuth (Germany),
 #'
@@ -89,7 +89,13 @@
       if(parms$model == "Bailey2002"){
         R <- dose_rate*3e10
       } else {
-        R <- dose_rate*5e7  # all other simulations
+        
+        if(parms$model == "Friedrich2018"){
+          R <- dose_rate*6.3e7
+        } else {
+        
+          R <- dose_rate*5e7  # all other simulations
+        }
       }
     }
   }

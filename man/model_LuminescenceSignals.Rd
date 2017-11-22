@@ -11,7 +11,7 @@ model_LuminescenceSignals(model, sequence, lab.dose_rate = 1,
 }
 \arguments{
 \item{model}{\code{\link{character}} (\bold{required}): set model to be used. Available models are:
-"Bailey2001", "Bailey2002", "Bailey2004", "Pagonis2007", "Pagonis2008", "Friedrich2017" and for own models "customized" (or "customised").
+"Bailey2001", "Bailey2002", "Bailey2004", "Pagonis2007", "Pagonis2008", "Friedrich2017", "Friedrich2018" and for own models "customized" (or "customised").
 Note: When model = "customized" is set, the argument 'own_parameters' has to be set.}
 
 \item{sequence}{\code{\link{list}} (\bold{required}): set sequence to model as \code{\link{list}} or as *.seq file from the
@@ -113,7 +113,7 @@ Irr_2recover \tab Dose to be recovered in a dose-recovery-test [Gy]\tab 20
 }
 }
 \section{Function version}{
- 0.1.4 (2017-10-11 09:22:22)
+ 0.1.5 (2017-11-20 14:14:40)
 }
 
 \examples{

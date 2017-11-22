@@ -1,5 +1,18 @@
 # NEWS for the R Package RLumModel
 
+## Changes in version 0.2.3 (22nd November, 2017)
+
+### Miscellaneous
+
+* Add further tests
+
+### Bugfixes and changes:
+
+* set_pars():
+	  * Add new parameter set "Friedrich2018"
+	  
+____________________________________________________________________________________
+  
 ## Changes in version 0.2.2 (13th October, 2017)
 
 ### Miscellaneous
@@ -21,7 +34,7 @@ ________________________________________________________________________________
 
 ### Bugfixes and changes:
   
-* simulate_LM_OSL:
+* simulate_LM_OSL():
     * Right call to .set_ODE_Rcpp_LM_OSL
 
 ____________________________________________________________________________________
