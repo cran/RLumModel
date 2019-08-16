@@ -113,7 +113,7 @@ Irr_2recover \tab Dose to be recovered in a dose-recovery-test [Gy]\tab 20
 }
 }
 \section{Function version}{
- 0.1.5 (2017-11-20 14:14:40)
+ 0.1.5
 }
 
 \examples{
@@ -391,7 +391,12 @@ model.output <- model_LuminescenceSignals(
    )
 
 }
+} 
+
+\section{How to cite}{
+Friedrich, J., Kreutzer, S., 2019. model_LuminescenceSignals(): Model Luminescence Signals. Function version 0.1.5. In: Friedrich, J., Kreutzer, S., Schmidt, C., 2019. RLumModel: Solving Ordinary Differential Equations to Understand LuminescenceR package version 0.2.4. https://CRAN.R-project.org/package=RLumModel
 }
+
 \references{
 Bailey, R.M., 2001. Towards a general kinetic model for optically and thermally stimulated
 luminescence of quartz. Radiation Measurements 33, 17-45.
@@ -432,4 +437,4 @@ Wintle, A., 1975. Thermal Quenching of Thermoluminescence in Quartz. Geophysical
 \author{
 Johannes Friedrich, University of Bayreuth (Germany),
 Sebastian Kreutzer, IRAMAT-CRP2A, Universite Bordeaux Montaigne (France)
-}
+, RLum Developer Team}
