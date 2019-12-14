@@ -1,13 +1,13 @@
-## ----global_options, include=FALSE---------------------------------------
+## ----global_options, include=FALSE--------------------------------------------
 knitr::opts_chunk$set(fig.pos = 'H', fig.align = 'center')
 
-## ---- message = FALSE----------------------------------------------------
+## ---- message = FALSE---------------------------------------------------------
 library(RLumModel)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 own_state_parameters <- c(0, 0, 1e11)
 
-## ---- fig.cap = "The effect of thermal quenching for TL signals"---------
+## ---- fig.cap = "The effect of thermal quenching for TL signals"--------------
 W <- c(0, 1.05)
 
 TL_Akselrod_1998 <- lapply(W, function(W){
@@ -45,7 +45,7 @@ plot_RLum.Analysis(
   legend.text = c("Unquenched", "Quenched"),
   combine = T)
 
-## ----Pagonis_2007 Chip101------------------------------------------------
+## ----Pagonis_2007 Chip101-----------------------------------------------------
 own_parameters <- list(
   N = c(2e15, 2e15, 2.4e16, 1e17),
   E = c(1.3,0, 0, 0),
@@ -59,7 +59,7 @@ own_parameters <- list(
 
 own_state_parameters <- c(0, 0, 0, 9.4e15)
 
-## ---- fig.cap= "TL signal for different given doses"---------------------
+## ---- fig.cap= "TL signal for different given doses"--------------------------
 dose <- 10^seq(-1, 3.5, 0.5)
 
 Pagonis_2007 <- lapply(dose, function(dose){
@@ -90,7 +90,7 @@ Luminescence::plot_RLum.Analysis(
   combine = T)
 
 
-## ----calculate TL max----------------------------------------------------
+## ----calculate TL max---------------------------------------------------------
 TL_max <- vapply(1:length(Pagonis_2007), function(x){
   
   TL <- get_RLum(get_RLum(Pagonis_2007[[x]], recordType = "TL$"))
@@ -99,7 +99,7 @@ TL_max <- vapply(1:length(Pagonis_2007), function(x){
   
 }, FUN.VALUE = 1)
 
-## ----calculate concentration of m1---------------------------------------
+## ----calculate concentration of m1--------------------------------------------
 
 m1_max <- vapply(1:length(Pagonis_2007), function(x){
   
@@ -109,7 +109,7 @@ m1_max <- vapply(1:length(Pagonis_2007), function(x){
 
 }, FUN.VALUE = 1)
 
-## ----plot TL max, echo = FALSE, fig.cap = "TL max vs. dose"--------------
+## ----plot TL max, echo = FALSE, fig.cap = "TL max vs. dose"-------------------
 plot(dose, TL_max, log = "xy",
      xlab = "Dose [Gy]", ylab = "TL max [a.u.]",
      ylim = c(1e11, 1e14), pch = 16)
@@ -121,7 +121,7 @@ plot(x = dose, y = m1_max, log = "x",
      ylim = c(1e14, 1.2e16), pch = 16)
 grid()
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 dose <- seq(1,400, 1)
 
 Fig_5 <- lapply(dose, function(dose){
@@ -139,7 +139,7 @@ Fig_5 <- lapply(dose, function(dose){
 
 })
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 n1 <- vapply(1:length(Fig_5), function(x){
   
   temp <- get_RLum(get_RLum(Fig_5[[x]], recordType = "conc. level 1"))

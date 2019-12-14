@@ -1,12 +1,12 @@
-## ----global_options, include=FALSE---------------------------------------
+## ----global_options, include=FALSE--------------------------------------------
 knitr::opts_chunk$set(fig.pos = 'H', fig.align = 'center')
 
-## ---- echo=FALSE, message = FALSE----------------------------------------
+## ---- echo=FALSE, message = FALSE---------------------------------------------
 library(RLumModel)
 library(knitr)
 library(kableExtra)
 
-## ---- eval = FALSE-------------------------------------------------------
+## ---- eval = FALSE------------------------------------------------------------
 #  data("ExampleData.ModelOutput", package = "RLumModel")
 #  
 #  ##show class
@@ -26,27 +26,27 @@ library(kableExtra)
 #  Luminescence::plot_RLum(TL_conc)
 #  
 
-## ---- eval = FALSE, fig.align = "center"---------------------------------
+## ---- eval = FALSE, fig.align = "center"--------------------------------------
 #  ##plot every energy-level by an extra plot
 #  Luminescence::plot_RLum(TL_conc, plot.single = TRUE)
 
-## ---- eval = FALSE-------------------------------------------------------
+## ---- eval = FALSE------------------------------------------------------------
 #  ##see structure of model.output
 #  Luminescence::structure_RLum(model.output)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 model <- "Bailey2001"
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 sequence <- system.file(
   "extdata",
   "example_SAR_cycle.SEQ",
   package = "RLumModel")
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 lab.dose_rate <-  0.105
 
-## ---- echo = FALSE-------------------------------------------------------
+## ---- echo = FALSE------------------------------------------------------------
 keywords <- data.frame(
   ARGUMENTS = c("TL","OSL","ILL","LM_OSL", "RF", "RF_heating", "IRR", "CH", "PH", "PAUSE"),
 DESCRIPTION = c("Thermally stimulated luminescence", "Optically stimulated luminescence", "Illumination", "Linear modulated OSL", "Radiofluorescence", "RF during heating/cooling","Irradiation", "Cutheat", "Preheat", "Pause"),
@@ -68,18 +68,18 @@ kable(keywords,
     kable_styling(bootstrap_options = c("striped", "hover"), full_width = F)
 
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 sequence <- list(
  IRR = c(temp = 20, dose = 10, dose_rate = 1),
  TL = c(temp_begin = 20, temp_end = 400 , heating_rate = 5))
 
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 sequence <- list(
   IRR = c(20, 10, 1),
   TL = c(20, 400, 5))
 
-## ---- echo = FALSE-------------------------------------------------------
+## ---- echo = FALSE------------------------------------------------------------
 SAR_sequence_table <- data.frame(
   ABBREVIATION = c("RegDose", "TestDose", "PH", "CH", "OSL_temp", "OSL_duration", "Irr_temp", "PH_duration", "dose_rate", "optical_power", "Irr_2recover"),
   DESCRIPTION = c("Dose points of the regenerative cycles [Gy]", 
@@ -111,7 +111,7 @@ kable(SAR_sequence_table,
       caption = "Keywords in RLumModel for creating SAR sequences") %>%
   kable_styling(bootstrap_options = c("striped", "hover"), full_width = F)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 sequence <- list(
   RegDose = c(0,10,20,50,90,0,10),
   TestDose = 2,
@@ -120,7 +120,7 @@ sequence <- list(
   OSL_temp = 125,
   Irr_2recover = 20)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 sequence <- list (
 IRR = c (20 , 10 , 1) ,
 TL = c (20 , 400 , 5))
@@ -131,7 +131,7 @@ model.output <- model_LuminescenceSignals(
   sequence = sequence,
   verbose = FALSE)
 
-## ---- fig.cap = "TL signal with different heating rates"-----------------
+## ---- fig.cap = "TL signal with different heating rates"----------------------
 ##set heating rate
 heating.rate <- seq(from = 2, to = 10, by = 2)
 
@@ -166,7 +166,7 @@ plot_RLum(
  legend.text = paste(heating.rate, "°C/s"),
  combine = TRUE)
 
-## ----TACs, fig.align="center"--------------------------------------------
+## ----TACs, fig.align="center"-------------------------------------------------
 ##set temperature
 act.temp <- seq(from = 80, to = 600, by = 20)
 
@@ -199,7 +199,7 @@ model.output <- vapply(X = act.temp, FUN = function(x) {
 
 }, FUN.VALUE = 1)
 
-## ---- echo=FALSE, fig.cap = "TAC with parameter set of 'Pagonis2007'"----
+## ---- echo=FALSE, fig.cap = "TAC with parameter set of 'Pagonis2007'"---------
 ##plot resutls
 plot(
   act.temp[-(1:3)],

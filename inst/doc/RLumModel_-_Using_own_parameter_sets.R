@@ -1,10 +1,10 @@
-## ---- echo=FALSE, message = FALSE----------------------------------------
+## ---- echo=FALSE, message = FALSE---------------------------------------------
 library(RLumModel)
 
-## ----global_options, include=FALSE---------------------------------------
+## ----global_options, include=FALSE--------------------------------------------
 knitr::opts_chunk$set(fig.pos = 'H', fig.align = 'center')
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 own_parameters <- list(
   N = c(2e15, 2e15, 2.4e16, 1e17),
   E = c(0, 0, 0, 0),
@@ -15,13 +15,13 @@ own_parameters <- list(
   model = "customized",
   R = 1.7e15)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 own_state_parameters <- c(0, 0, 0, 9.4e15)
 
-## ----set sequence Pagonis 2009-------------------------------------------
+## ----set sequence Pagonis 2009------------------------------------------------
 sequence <- list(RF = c(20, 0.1, 0.1))
 
-## ---- fig.cap = "RF signal for 0.1 Gy/s"---------------------------------
+## ---- fig.cap = "RF signal for 0.1 Gy/s"--------------------------------------
 RF_Pagonis2009 <- model_LuminescenceSignals(
   model = "customized", 
   sequence = sequence, 
@@ -29,7 +29,7 @@ RF_Pagonis2009 <- model_LuminescenceSignals(
   own_state_parameters = own_state_parameters,
   verbose = FALSE)
 
-## ---- fig.cap = "Concentration of m1 during RF"--------------------------
+## ---- fig.cap = "Concentration of m1 during RF"-------------------------------
 concentration_m1 <- Luminescence::get_RLum(
   RF_Pagonis2009,
   recordType = c("conc. level 4"))
@@ -69,7 +69,7 @@ plot_RLum(
  legend.pos = "outside",
  combine = TRUE)
 
-## ----Initial signal------------------------------------------------------
+## ----Initial signal-----------------------------------------------------------
 dose.rate <- seq(from = 0.1, to = 0.5, by = 0.1)
 
 model.output <- vapply(X = dose.rate, FUN = function(x) {
@@ -101,7 +101,7 @@ plot(
   ylab = "Initial RF intensitiy [a.u.]"
   )
 
-## ----Lawless 2009 set parameters-----------------------------------------
+## ----Lawless 2009 set parameters----------------------------------------------
 own_parameters <- list(
   N = c(1e14, 1e15),
   E = c(0, 0),
@@ -140,7 +140,7 @@ lines(t, numerical_eq18, pch = 4, col = "green", type = "b")
 
 legend("bottomright", legend = c("Simulated", "Eq. 16","Eq. 18"), col = c("black", "red", "green"), lwd = 1)
 
-## ----Chen 2013 set parameters--------------------------------------------
+## ----Chen 2013 set parameters-------------------------------------------------
 own_parameters <- list(
   N = c(1e9, 0),
   E = c(0.4, 0),
@@ -156,7 +156,7 @@ own_start_temperature <- -220
 
 sequence <- list(TL = c(-220, 130, 1))
 
-## ----solve Chen 2013, fig.cap = "TL with parameter sets of Chen 2013"----
+## ----solve Chen 2013, fig.cap = "TL with parameter sets of Chen 2013"---------
 TL_Chen2013 <- model_LuminescenceSignals(
   model = "customized", 
   sequence = sequence, 
@@ -165,7 +165,7 @@ TL_Chen2013 <- model_LuminescenceSignals(
   own_start_temperature = own_start_temperature,
   verbose = FALSE)
 
-## ---- echo=FALSE, fig.cap = "Concentrations of different energy levels"----
+## ---- echo=FALSE, fig.cap = "Concentrations of different energy levels"-------
 concentration <- Luminescence::get_RLum(
   TL_Chen2013, 
   recordType = c("conc. level 1", "conc. level 2", "conc. n_c"),
