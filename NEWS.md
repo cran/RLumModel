@@ -7,7 +7,18 @@
 
 # NEWS for the R Package RLumModel
 
-## Changes in version 0.2.5 (2019-12-11)
+## Changes in version 0.2.7 (2020-09-01)
+
+  - Changed Makevars to tackle Solaris problems
+
+## Changes in version 0.2.6 (August 31, 2020)
+
+  - Switch vignette builder to `'R.rsp'` to avoid ATLAS BLAS warning
+  - Drop dependency (‘suggests’) to `'knitr'`, `'kableExtra'` and
+    `'rmarkdown'`
+  - The minimum required R version is now 3.5.0
+
+## Changes in version 0.2.5 (15nd December, 2019)
 
   - Changes in ‘Luminescence’ broke the vignette; now modified with a
     workaround

@@ -8,10 +8,10 @@
 # RLumModel
 
 [![CRAN](http://www.r-pkg.org/badges/version/RLumModel)](https://CRAN.R-project.org/package=RLumModel)
-[![Downloads](http://cranlogs.r-pkg.org/badges/grand-total/RLumModel)](http://www.r-pkg.org/pkg/RLumModel)
-[![Downloads](http://cranlogs.r-pkg.org/badges/RLumModel)](http://www.r-pkg.org/pkg/RLumModel)
-[![Downloads](http://cranlogs.r-pkg.org/badges/last-week/RLumModel)](http://www.r-pkg.org/pkg/RLumModel)
-[![Downloads](http://cranlogs.r-pkg.org/badges/last-day/RLumModel)](http://www.r-pkg.org/pkg/RLumModel)
+[![Downloads](http://cranlogs.r-pkg.org/badges/grand-total/RLumModel)](https://www.r-pkg.org/pkg/RLumModel)
+[![Downloads](http://cranlogs.r-pkg.org/badges/RLumModel)](https://www.r-pkg.org/pkg/RLumModel)
+[![Downloads](http://cranlogs.r-pkg.org/badges/last-week/RLumModel)](https://www.r-pkg.org/pkg/RLumModel)
+[![Downloads](http://cranlogs.r-pkg.org/badges/last-day/RLumModel)](https://www.r-pkg.org/pkg/RLumModel)
 [![Research software
 impact](http://depsy.org/api/package/cran/RLumModel/badge.svg)](http://depsy.org/package/r/RLumModel)
 [![Build
@@ -57,18 +57,14 @@ To install a developer build other than ‘master’, replace the term
 
 Depending on your OS please download and install one of the following:
 
-**Windows (32/64bit)** - ‘Rtools’ (provided by CRAN)
-
-<https://cran.r-project.org/bin/windows/Rtools/>
-
-**Mac OS X** - ‘Xcode’ (provided by Apple)
-
-<https://developer.apple.com/xcode/downloads/>
-
-For **Linux** users *gcc* often comes pre-installed in most
-distributions. Should *gcc* be not available, however, we kindly refer
-to the exhaustive collection of installation guides depending on the
-linux distribution.
+  - *Windows*: [Rtools](https://cran.r-project.org/bin/windows/Rtools/)
+    (provided by CRAN)
+  - *macOS*: [Xcode](https://developer.apple.com/xcode/) (provided by
+    Apple)
+  - *Linux*: [gcc](https://gcc.gnu.org) often comes pre-installed in
+    most distributions. Should [gcc](https://gcc.gnu.org) be not
+    available, however, we kindly refer to the exhaustive collection of
+    installation guides depending on the Linux distribution.
 
 ## Using RLumModel
 
