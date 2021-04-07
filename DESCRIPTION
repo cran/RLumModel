@@ -2,8 +2,8 @@ Package: RLumModel
 Type: Package
 Title: Solving Ordinary Differential Equations to Understand
         Luminescence
-Version: 0.2.7
-Date: 2020-09-01
+Version: 0.2.8
+Date: 2021-04-06
 Author: Johannes Friedrich [aut, trl, cre]
     (<https://orcid.org/0000-0002-0805-9547>),
   Sebastian Kreutzer [aut, ths] (<https://orcid.org/0000-0002-0734-2199>),
@@ -18,9 +18,10 @@ Maintainer: Johannes Friedrich <johannes.friedrich@posteo.de>
 Description: A collection of functions to simulate luminescence signals in quartz and Al2O3 based on published models.
 Contact: Package Developer Team <developer@model.r-luminescence.de>
 License: GPL-3
-Depends: R (>= 3.5.0), utils, Luminescence (>= 0.9.0)
-Imports: deSolve (>= 1.21), methods, Rcpp (>= 1.0.1)
-Suggests: testthat (>= 2.1.1), R.rsp (>= 0.44.0)
+BugReports: https://github.com/R-Lum/RLumModel/issues
+Depends: R (>= 3.6.0), utils, Luminescence (>= 0.9.0)
+Imports: deSolve (>= 1.28), methods, Rcpp (>= 1.0.6)
+Suggests: testthat (>= 3.0.0), R.rsp (>= 0.44.0)
 URL: https://CRAN.R-project.org/package=RLumModel
 Collate: RLumModel-package.R RcppExports.R calc_signal.R
         calc_concentrations.R create_DRT.sequence.R
@@ -36,6 +37,6 @@ LazyData: true
 VignetteBuilder: R.rsp
 LinkingTo: Rcpp (>= 1.0.1), RcppArmadillo (>= 0.9.400.2.0)
 NeedsCompilation: yes
-Packaged: 2020-09-01 18:03:28 UTC; johannes
+Packaged: 2021-04-07 17:56:18 UTC; johannes
 Repository: CRAN
-Date/Publication: 2020-09-04 07:02:27 UTC
+Date/Publication: 2021-04-07 18:40:07 UTC
